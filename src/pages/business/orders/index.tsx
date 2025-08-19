@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Card, Loading, Button, Badge } from '@/components/ui';
+import { Card, Table, Button, Badge } from '@/components/ui';
+import type { TableProps } from '@/components/ui';
+import { PlusOutlined, DeleteOutlined, EyeOutlined } from '@ant-design/icons';
 import { getOrders, Order } from '@/mocks/orders';
 
 const Orders = () => {
   const { t } = useTranslation(['menu', 'common']);
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const [total, setTotal] = useState(0);
+  const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await getOrders(1, 10);
+        setLoading(true);
+        const response = await getOrders(currentPage, pageSize);
         setOrders(response.data.items);
+        setTotal(response.data.total);
       } catch (error) {
         console.error('Failed to fetch orders:', error);
       } finally {
@@ -21,7 +29,7 @@ const Orders = () => {
     };
 
     fetchOrders();
-  }, []);
+  }, [currentPage, pageSize]);
 
   const getStatusColor = (status: Order['status']) => {
     const colors = {
@@ -34,9 +42,93 @@ const Orders = () => {
     return colors[status] || 'default';
   };
 
-  // if (loading) {
-  //   return <Loading size="large" text="Loading orders..." />;
-  // }
+  const handleDeleteSelected = () => {
+    console.log('Delete selected orders:', selectedRowKeys);
+    // TODO: Implement delete logic
+    setSelectedRowKeys([]);
+  };
+
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: (newSelectedRowKeys: React.Key[]) => {
+      setSelectedRowKeys(newSelectedRowKeys);
+    },
+  };
+
+  const columns: TableProps<Order>['columns'] = [
+    {
+      title: 'Order',
+      dataIndex: 'orderNumber',
+      key: 'orderNumber',
+      sorter: (a, b) => a.orderNumber.localeCompare(b.orderNumber),
+      render: (orderNumber: string, record: Order) => (
+        <div>
+          <div className="text-sm font-medium text-gray-900 dark:text-white">
+            {orderNumber}
+          </div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            ID: {record.id}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Customer',
+      dataIndex: 'customerName',
+      key: 'customerName',
+      sorter: (a, b) => a.customerName.localeCompare(b.customerName),
+      render: (customerName: string, record: Order) => (
+        <div>
+          <div className="text-sm font-medium text-gray-900 dark:text-white">
+            {customerName}
+          </div>
+          <div className="text-sm text-gray-500 dark:text-gray-400">
+            {record.customerEmail}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      sorter: (a, b) => a.status.localeCompare(b.status),
+      render: (status: Order['status']) => (
+        <Badge status={getStatusColor(status)} text={status} />
+      ),
+    },
+    {
+      title: 'Total',
+      dataIndex: 'total',
+      key: 'total',
+      sorter: (a, b) => a.total - b.total,
+      render: (total: number) => (
+        <span className="text-sm text-gray-900 dark:text-white">
+          ${total.toFixed(2)}
+        </span>
+      ),
+    },
+    {
+      title: 'Date',
+      dataIndex: 'createdAt',
+      key: 'createdAt',
+      sorter: (a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
+      render: (createdAt: string) => (
+        <span className="text-sm text-gray-500 dark:text-gray-400">
+          {new Date(createdAt).toLocaleDateString()}
+        </span>
+      ),
+    },
+    {
+      title: 'Actions',
+      key: 'actions',
+      render: () => (
+        <Button type="link" size="small" icon={<EyeOutlined />}>
+          {t('view', { ns: 'common' })}
+        </Button>
+      ),
+    },
+  ];
 
   return (
     <div className="p-6 space-y-6">
@@ -44,78 +136,49 @@ const Orders = () => {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           {t('orders', { ns: 'menu' })}
         </h1>
-        <Button type="primary">
-          {t('add', { ns: 'common' })} Order
-        </Button>
+        <div className="flex items-center gap-3">
+          {selectedRowKeys.length > 0 && (
+            <Button
+              type="primary"
+              danger
+              icon={<DeleteOutlined />}
+              onClick={handleDeleteSelected}
+            >
+              {t('delete', { ns: 'common' })} ({selectedRowKeys.length})
+            </Button>
+          )}
+          <Button type="primary" icon={<PlusOutlined />}>
+            {t('add', { ns: 'common' })} Order
+          </Button>
+        </div>
       </div>
 
       <Card>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-            <thead className="bg-gray-50 dark:bg-gray-800">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Order
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Customer
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Status
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Total
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Date
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                  Actions
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-700">
-              {orders.map((order) => (
-                <tr key={order.id}>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div>
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">
-                        {order.orderNumber}
-                      </div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">
-                        ID: {order.id}
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div>
-                      <div className="text-sm font-medium text-gray-900 dark:text-white">
-                        {order.customerName}
-                      </div>
-                      <div className="text-sm text-gray-500 dark:text-gray-400">
-                        {order.customerEmail}
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <Badge status={getStatusColor(order.status)} text={order.status} />
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                    ${order.total.toFixed(2)}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                    {new Date(order.createdAt).toLocaleDateString()}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <Button type="link" size="small">
-                      {t('view', { ns: 'common' })}
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <Table
+          columns={columns}
+          dataSource={orders}
+          rowKey="id"
+          loading={loading}
+          rowSelection={rowSelection}
+          pagination={{
+            current: currentPage,
+            pageSize: pageSize,
+            total: total,
+            showSizeChanger: true,
+            showQuickJumper: true,
+            showTotal: (total, range) =>
+              `${range[0]}-${range[1]} of ${total} orders`,
+            onChange: (page, size) => {
+              setCurrentPage(page);
+              setPageSize(size || 10);
+            },
+            onShowSizeChange: (_, size) => {
+              setCurrentPage(1);
+              setPageSize(size);
+            },
+          }}
+          scroll={{ x: 800 }}
+        />
       </Card>
     </div>
   );

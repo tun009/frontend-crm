@@ -1,0 +1,65 @@
+{
+  "title": "Quản Lý License Key",
+  "addLicense": "Thêm License",
+  "deleteLicenses": "Xóa License",
+  "viewLicense": "Xem",
+  "editLicense": "Sửa",
+  "renewLicense": "Gia Hạn",
+  "suspendLicense": "Tạm Dừng",
+  "activateLicense": "Kích Hoạt",
+  "revokeLicense": "Thu Hồi",
+
+  "columns": {
+    "licenseKey": "License Key",
+    "product": "Sản Phẩm",
+    "customer": "Khách Hàng",
+    "status": "Trạng Thái",
+    "type": "Loại",
+    "users": "Người Dùng",
+    "expiry": "Ngày Hết Hạn",
+    "lastUsed": "Lần Cuối Sử Dụng",
+    "price": "Giá",
+    "actions": "Thao Tác"
+  },
+
+  "status": {
+    "active": "Hoạt Động",
+    "expired": "Hết Hạn",
+    "suspended": "Tạm Dừng",
+    "pending": "Chờ Xử Lý",
+    "revoked": "Đã Thu Hồi"
+  },
+
+  "type": {
+    "standard": "Tiêu Chuẩn",
+    "premium": "Cao Cấp",
+    "enterprise": "Doanh Nghiệp",
+    "trial": "Dùng Thử"
+  },
+
+  "filters": {
+    "all": "Tất Cả License Key",
+    "active": "Chỉ Hoạt Động",
+    "expired": "Chỉ Hết Hạn",
+    "expiringSoon": "Sắp Hết Hạn"
+  },
+
+  "messages": {
+    "noData": "Không tìm thấy license key nào",
+    "loading": "Đang tải license key...",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa {count} license key?",
+    "deleteSuccess": "Đã xóa thành công {count} license key",
+    "statusUpdateSuccess": "Cập nhật trạng thái license key thành công",
+    "renewalReminder": "License key này sẽ hết hạn trong {days} ngày"
+  },
+
+  "details": {
+    "issueDate": "Ngày Cấp",
+    "expiryDate": "Ngày Hết Hạn",
+    "maxUsers": "Số Người Dùng Tối Đa",
+    "currentUsers": "Số Người Dùng Hiện Tại",
+    "features": "Tính Năng",
+    "renewalPrice": "Giá Gia Hạn",
+    "usage": "Sử Dụng"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "title": "License Management",
+  "addLicense": "Add License",
+  "deleteLicenses": "Delete Licenses",
+  "viewLicense": "View",
+  "editLicense": "Edit",
+  "renewLicense": "Renew",
+  "suspendLicense": "Suspend",
+  "activateLicense": "Activate",
+  "revokeLicense": "Revoke",
+  
+  "columns": {
+    "licenseKey": "License Key",
+    "product": "Product",
+    "customer": "Customer",
+    "status": "Status",
+    "type": "Type",
+    "users": "Users",
+    "expiry": "Expiry Date",
+    "lastUsed": "Last Used",
+    "price": "Price",
+    "actions": "Actions"
+  },
+  
+  "status": {
+    "active": "Active",
+    "expired": "Expired",
+    "suspended": "Suspended",
+    "pending": "Pending",
+    "revoked": "Revoked"
+  },
+  
+  "type": {
+    "standard": "Standard",
+    "premium": "Premium",
+    "enterprise": "Enterprise",
+    "trial": "Trial"
+  },
+  
+  "filters": {
+    "all": "All Licenses",
+    "active": "Active Only",
+    "expired": "Expired Only",
+    "expiringSoon": "Expiring Soon"
+  },
+  
+  "messages": {
+    "noData": "No licenses found",
+    "loading": "Loading licenses...",
+    "deleteConfirm": "Are you sure you want to delete {count} license(s)?",
+    "deleteSuccess": "Successfully deleted {count} license(s)",
+    "statusUpdateSuccess": "License status updated successfully",
+    "renewalReminder": "This license will expire in {days} days"
+  },
+  
+  "details": {
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date",
+    "maxUsers": "Max Users",
+    "currentUsers": "Current Users",
+    "features": "Features",
+    "renewalPrice": "Renewal Price",
+    "usage": "Usage"
+  }
+}

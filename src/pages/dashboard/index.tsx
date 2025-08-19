@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, Loading } from '@/components/ui';
 import { getDashboardStats, getDashboardCharts, DashboardStats, ChartData } from '@/mocks/dashboard';
-import { CO2EmissionsChart } from './components';
+import MultiLineChart from '@/components/common/MultiLineChart';
+import { weeklyActivityData } from '@/mocks/chartData';
 
 const Dashboard = () => {
   const { t } = useTranslation(['menu', 'dashboard']);
@@ -40,9 +41,6 @@ const Dashboard = () => {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           {t('dashboard')}
         </h1>
-        <div className="text-gray-500 dark:text-gray-400">
-          {new Date().toLocaleDateString()}
-        </div>
       </div>
 
       {/* Stats Cards */}
@@ -119,7 +117,18 @@ const Dashboard = () => {
       {/* Charts */}
       <div className="space-y-6">
         {/* Multi-line Chart with smooth curves */}
-        <CO2EmissionsChart />
+        <MultiLineChart
+          data={weeklyActivityData}
+          title="Weekly Activity Tracking"
+          height={450}
+          colors={['#1890ff', '#52c41a', '#722ed1']}
+          showLegend={true}
+          smooth={true}
+          yAxisLabel="Frequency"
+          xAxisLabel="Week"
+          className="mb-6"
+          lines={['Workout', 'Call parents', 'Eat breakfast']}
+        />
       </div>
     </div>
   );

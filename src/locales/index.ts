@@ -5,21 +5,29 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enCommon from './en_US/common.json';
 import enSys from './en_US/sys.json';
 import enMenu from './en_US/menu.json';
+import enDashboard from './en_US/dashboard.json';
+import enLicenses from './en_US/licenses.json';
 
 import viCommon from './vi_VN/common.json';
 import viSys from './vi_VN/sys.json';
 import viMenu from './vi_VN/menu.json';
+import viDashboard from './vi_VN/dashboard.json';
+import viLicenses from './vi_VN/licenses.json';
 
 const resources = {
   en_US: {
     common: enCommon,
     sys: enSys,
-    menu: enMenu
+    menu: enMenu,
+    dashboard: enDashboard,
+    licenses: enLicenses
   },
   vi_VN: {
     common: viCommon,
     sys: viSys,
-    menu: viMenu
+    menu: viMenu,
+    dashboard: viDashboard,
+    licenses: viLicenses
   }
 };
 

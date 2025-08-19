@@ -1,5 +1,5 @@
 // Re-export customized components
-export { Button, Card, Input } from './CustomComponents';
+export { Button, Card, Input, Table } from './CustomComponents';
 
 // Re-export Ant Design components with consistent naming
 export {
@@ -7,7 +7,6 @@ export {
   Modal,
   Badge,
   Avatar,
-  Table,
   Form,
   Select,
   DatePicker,

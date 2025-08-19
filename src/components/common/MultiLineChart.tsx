@@ -1,6 +1,7 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { Card } from 'antd';
+import { Card } from '@/components/ui';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '@/hooks/useTheme';
 
 export interface ChartDataPoint {
   time: string;
@@ -35,6 +36,7 @@ const MultiLineChart = ({
   lines
 }: MultiLineChartProps) => {
   const { t } = useTranslation('dashboard');
+  const { isDark } = useTheme();
 
   if (loading) {
     return (
@@ -53,14 +55,8 @@ const MultiLineChart = ({
     return (
       <Card title={title} className={className}>
         <div
-          style={{
-            height,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#999',
-            fontSize: 14
-          }}
+          className="flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm"
+          style={{ height }}
         >
           {t('chart.noData')}
         </div>
@@ -76,22 +72,26 @@ const MultiLineChart = ({
     >
       <ResponsiveContainer width="100%" height={height}>
         <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            stroke={isDark ? '#374151' : '#f0f0f0'}
+          />
           <XAxis
             dataKey="time"
-            tick={{ fontSize: 12, fill: '#666' }}
-            axisLine={{ stroke: '#d9d9d9' }}
+            tick={{ fontSize: 12, fill: isDark ? '#9CA3AF' : '#666' }}
+            axisLine={{ stroke: isDark ? '#4B5563' : '#d9d9d9' }}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: '#666' }}
-            axisLine={{ stroke: '#d9d9d9' }}
+            tick={{ fontSize: 12, fill: isDark ? '#9CA3AF' : '#666' }}
+            axisLine={{ stroke: isDark ? '#4B5563' : '#d9d9d9' }}
           />
           <Tooltip
             contentStyle={{
-              backgroundColor: 'white',
-              border: '1px solid #d9d9d9',
+              backgroundColor: isDark ? '#1F2937' : 'white',
+              border: `1px solid ${isDark ? '#374151' : '#d9d9d9'}`,
               borderRadius: '6px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              color: isDark ? '#F9FAFB' : '#000'
             }}
           />
           {showLegend && <Legend />}
