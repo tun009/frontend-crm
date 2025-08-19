@@ -76,7 +76,7 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
   ];
 
   return (
-    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 h-16 flex items-center justify-between shadow-sm">
+    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 h-16 flex items-center justify-between shadow-sm">
       <div className="flex items-center space-x-4">
         <button
           onClick={onToggleCollapse}
@@ -88,12 +88,9 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
             <MenuFoldOutlined className="text-gray-600 dark:text-gray-300" />
           )}
         </button>
-        
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">C</span>
-          </div>
-          <span className="font-semibold text-gray-900 dark:text-white">CRM</span>
+
+        <div className="text-lg font-semibold text-gray-900 dark:text-white">
+          Dashboard
         </div>
       </div>
 

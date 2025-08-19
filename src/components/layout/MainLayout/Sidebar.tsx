@@ -41,7 +41,7 @@ const Sidebar = ({ collapsed }: SidebarProps) => {
       label: t('dashboard'),
       icon: <DashboardOutlined />,
       path: ROUTES.DASHBOARD,
-      category: 'Navigation'
+      category: 'Dashboard'
     },
 
     // Resources
@@ -185,8 +185,20 @@ const Sidebar = ({ collapsed }: SidebarProps) => {
   return (
     <aside className={`bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 ${
       collapsed ? 'w-16' : 'w-64'
-    } h-full overflow-y-auto`}>
-      <div className="p-4">
+    } h-screen flex flex-col`}>
+      {/* Logo/Brand Section */}
+      <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span className="text-white font-bold text-sm">C</span>
+          </div>
+          {!collapsed && (
+            <span className="font-bold text-xl text-gray-900 dark:text-white">CRM</span>
+          )}
+        </div>
+      </div>
+
+      <div className="flex-1 overflow-y-auto p-4">
         <nav className="space-y-6">
           {Object.entries(groupedMenuData).map(([category, items]) => (
             <div key={category}>

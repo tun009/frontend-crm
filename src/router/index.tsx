@@ -8,7 +8,7 @@ import { routes } from './routes';
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Suspense fallback={<Loading size="large" text="Loading..." overlay />}>
+      <Suspense fallback={<Loading size="large" tip="Loading..." />}>
       {/* <Suspense> */}
         <Routes>
           {routes.map((route) => {
