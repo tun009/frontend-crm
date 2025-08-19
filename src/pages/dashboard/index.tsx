@@ -4,7 +4,7 @@ import { Card, Loading } from '@/components/ui';
 import { getDashboardStats, getDashboardCharts, DashboardStats, ChartData } from '@/mocks/dashboard';
 
 const Dashboard = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('menu');
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [charts, setCharts] = useState<ChartData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -37,9 +37,9 @@ const Dashboard = () => {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          {t('menu.dashboard')}
+          {t('dashboard')}
         </h1>
-        <div className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-gray-500 dark:text-gray-400">
           {new Date().toLocaleDateString()}
         </div>
       </div>
@@ -49,7 +49,7 @@ const Dashboard = () => {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Users</p>
+              <p className="font-medium text-gray-600 dark:text-gray-400">Total Users</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
                 {stats?.totalUsers.toLocaleString()}
               </p>
@@ -66,7 +66,7 @@ const Dashboard = () => {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Orders</p>
+              <p className="font-medium text-gray-600 dark:text-gray-400">Total Orders</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
                 {stats?.totalOrders.toLocaleString()}
               </p>
@@ -83,7 +83,7 @@ const Dashboard = () => {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Total Revenue</p>
+              <p className="font-medium text-gray-600 dark:text-gray-400">Total Revenue</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
                 ${stats?.totalRevenue.toLocaleString()}
               </p>
@@ -100,7 +100,7 @@ const Dashboard = () => {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Active Customers</p>
+              <p className="font-medium text-gray-600 dark:text-gray-400">Active Customers</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-white">
                 {stats?.activeCustomers.toLocaleString()}
               </p>

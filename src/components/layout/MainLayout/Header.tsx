@@ -124,7 +124,7 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
         <Dropdown menu={{ items: userMenuItems }} placement="bottomRight">
           <div className="flex items-center space-x-2 cursor-pointer p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
             <Avatar size="small" icon={<UserOutlined />} />
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">John Doe</span>
+            <span className="font-medium text-gray-700 dark:text-gray-300">John Doe</span>
           </div>
         </Dropdown>
       </div>

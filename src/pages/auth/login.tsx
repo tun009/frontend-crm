@@ -5,7 +5,7 @@ import { Button, Input, Card } from '@/components/ui';
 import { ROUTES } from '@/utils/constants';
 
 const Login = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('common');
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ const Login = () => {
             <span className="text-white font-bold text-xl">C</span>
           </div>
           <h2 className="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white">
-            {t('common.login')}
+            {t('login')}
           </h2>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Sign in to your CRM account
@@ -50,7 +50,7 @@ const Login = () => {
         <Card className="p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
-              label={t('common.email')}
+              label={t('email')}
               type="email"
               name="email"
               value={formData.email}
@@ -96,7 +96,7 @@ const Login = () => {
               loading={loading}
               className="w-full"
             >
-              {t('common.login')}
+              {t('login')}
             </Button>
           </form>
 
@@ -104,7 +104,7 @@ const Login = () => {
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Don't have an account?{' '}
               <Link to={ROUTES.AUTH.REGISTER} className="font-medium text-blue-600 hover:text-blue-500">
-                {t('common.register')}
+                {t('register')}
               </Link>
             </p>
           </div>

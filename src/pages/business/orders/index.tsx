@@ -4,7 +4,7 @@ import { Card, Loading, Button, Badge } from '@/components/ui';
 import { getOrders, Order } from '@/mocks/orders';
 
 const Orders = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(['menu', 'common']);
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,10 +42,10 @@ const Orders = () => {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          {t('menu.orders')}
+          {t('orders', { ns: 'menu' })}
         </h1>
         <Button type="primary">
-          {t('common.add')} Order
+          {t('add', { ns: 'common' })} Order
         </Button>
       </div>
 
@@ -108,7 +108,7 @@ const Orders = () => {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <Button type="link" size="small">
-                      {t('common.view')}
+                      {t('view', { ns: 'common' })}
                     </Button>
                   </td>
                 </tr>
