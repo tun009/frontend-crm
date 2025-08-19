@@ -114,9 +114,7 @@ const Dashboard = () => {
         </Card>
       </div>
 
-      {/* Charts */}
       <div className="space-y-6">
-        {/* Multi-line Chart with smooth curves */}
         <MultiLineChart
           data={weeklyActivityData}
           title="Weekly Activity Tracking"
