@@ -1,0 +1,68 @@
+{
+  "title": "Bảng điều khiển",
+  "welcome": "Chào mừng trở lại",
+  "overview": "Tổng quan",
+  "statistics": "Thống kê",
+  "charts": "Biểu đồ",
+  "recentActivity": "Hoạt động gần đây",
+  "quickActions": "Hành động nhanh",
+  
+  "chart": {
+    "title": "Biểu đồ phân tích",
+    "co2Emissions": "Nguyên nhân phát thải CO2",
+    "revenue": "Doanh thu theo kênh",
+    "userGrowth": "Tăng trưởng người dùng",
+    "loading": "Đang tải biểu đồ...",
+    "noData": "Không có dữ liệu",
+    "error": "Lỗi tải dữ liệu",
+    
+    "categories": {
+      "liquidFuel": "Nhiên liệu lỏng",
+      "solidFuel": "Nhiên liệu rắn", 
+      "gasFuel": "Nhiên liệu khí",
+      "cementProduction": "Sản xuất xi măng",
+      "gasFlaring": "Đốt khí thải",
+      
+      "onlineSales": "Bán hàng trực tuyến",
+      "retailSales": "Bán lẻ",
+      "wholesale": "Bán sỉ",
+      "subscription": "Đăng ký",
+      
+      "newUsers": "Người dùng mới",
+      "activeUsers": "Người dùng hoạt động",
+      "premiumUsers": "Người dùng premium"
+    },
+    
+    "tooltip": {
+      "year": "Năm",
+      "month": "Tháng",
+      "quarter": "Quý",
+      "value": "Giá trị",
+      "category": "Danh mục"
+    },
+    
+    "legend": {
+      "show": "Hiển thị chú thích",
+      "hide": "Ẩn chú thích",
+      "position": "Vị trí chú thích"
+    },
+    
+    "axis": {
+      "xAxis": "Trục X",
+      "yAxis": "Trục Y",
+      "time": "Thời gian",
+      "emissions": "Lượng phát thải (triệu tấn)",
+      "revenue": "Doanh thu (triệu VND)",
+      "users": "Số lượng người dùng"
+    }
+  },
+  
+  "metrics": {
+    "totalRevenue": "Tổng doanh thu",
+    "totalOrders": "Tổng đơn hàng",
+    "totalCustomers": "Tổng khách hàng",
+    "totalProducts": "Tổng sản phẩm",
+    "growthRate": "Tỷ lệ tăng trưởng",
+    "conversionRate": "Tỷ lệ chuyển đổi"
+  }
+}

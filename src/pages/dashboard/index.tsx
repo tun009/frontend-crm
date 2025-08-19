@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, Loading } from '@/components/ui';
 import { getDashboardStats, getDashboardCharts, DashboardStats, ChartData } from '@/mocks/dashboard';
+import { CO2EmissionsChart } from './components';
 
 const Dashboard = () => {
-  const { t } = useTranslation('menu');
+  const { t } = useTranslation(['menu', 'dashboard']);
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [charts, setCharts] = useState<ChartData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -116,22 +117,9 @@ const Dashboard = () => {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card title="Revenue Overview" className="p-6">
-          <div className="h-64 flex items-center justify-center text-gray-500 dark:text-gray-400">
-            Revenue Chart Placeholder
-            <br />
-            <small>Chart library will be added later</small>
-          </div>
-        </Card>
-
-        <Card title="User Growth" className="p-6">
-          <div className="h-64 flex items-center justify-center text-gray-500 dark:text-gray-400">
-            User Growth Chart Placeholder
-            <br />
-            <small>Chart library will be added later</small>
-          </div>
-        </Card>
+      <div className="space-y-6">
+        {/* Multi-line Chart with smooth curves */}
+        <CO2EmissionsChart />
       </div>
     </div>
   );

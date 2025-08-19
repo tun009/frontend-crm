@@ -1,0 +1,68 @@
+{
+  "title": "Dashboard",
+  "welcome": "Welcome back",
+  "overview": "Overview",
+  "statistics": "Statistics",
+  "charts": "Charts",
+  "recentActivity": "Recent Activity",
+  "quickActions": "Quick Actions",
+  
+  "chart": {
+    "title": "Analytics Chart",
+    "co2Emissions": "The causes of CO2 emissions",
+    "revenue": "Revenue by Channel",
+    "userGrowth": "User Growth",
+    "loading": "Loading chart...",
+    "noData": "No data available",
+    "error": "Error loading data",
+    
+    "categories": {
+      "liquidFuel": "Liquid fuel",
+      "solidFuel": "Solid fuel", 
+      "gasFuel": "Gas fuel",
+      "cementProduction": "Cement production",
+      "gasFlaring": "Gas flaring",
+      
+      "onlineSales": "Online Sales",
+      "retailSales": "Retail Sales",
+      "wholesale": "Wholesale",
+      "subscription": "Subscription",
+      
+      "newUsers": "New Users",
+      "activeUsers": "Active Users",
+      "premiumUsers": "Premium Users"
+    },
+    
+    "tooltip": {
+      "year": "Year",
+      "month": "Month",
+      "quarter": "Quarter",
+      "value": "Value",
+      "category": "Category"
+    },
+    
+    "legend": {
+      "show": "Show legend",
+      "hide": "Hide legend",
+      "position": "Legend position"
+    },
+    
+    "axis": {
+      "xAxis": "X Axis",
+      "yAxis": "Y Axis",
+      "time": "Time",
+      "emissions": "Emissions (million tons)",
+      "revenue": "Revenue (million VND)",
+      "users": "Number of users"
+    }
+  },
+  
+  "metrics": {
+    "totalRevenue": "Total Revenue",
+    "totalOrders": "Total Orders",
+    "totalCustomers": "Total Customers",
+    "totalProducts": "Total Products",
+    "growthRate": "Growth Rate",
+    "conversionRate": "Conversion Rate"
+  }
+}
