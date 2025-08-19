@@ -1,0 +1,22 @@
+{
+  "dashboard": "Dashboard",
+  "resources": "Tài nguyên",
+  "licenseManagement": "Quản lý License",
+  "products": "Sản phẩm",
+  "business": "Kinh doanh",
+  "orders": "Đơn hàng",
+  "revenue": "Doanh thu",
+  "customers": "Khách hàng",
+  "marketing": "Marketing",
+  "affiliate": "Affiliate",
+  "emailMarketing": "Email marketing",
+  "campaigns": "Chiến dịch",
+  "templates": "Cài đặt mẫu",
+  "adminTools": "Công cụ admin",
+  "users": "Người dùng",
+  "categories": "Danh mục",
+  "permissions": "Quyền truy cập",
+  "settings": "Cài đặt",
+  "tools": "Công cụ",
+  "apiDocs": "Tài liệu API"
+}

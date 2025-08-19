@@ -1,0 +1,46 @@
+{
+  "error": {
+    "network": "Lỗi kết nối mạng",
+    "server": "Lỗi máy chủ",
+    "unauthorized": "Không có quyền truy cập",
+    "forbidden": "Truy cập bị cấm",
+    "notFound": "Không tìm thấy tài nguyên",
+    "validation": "Lỗi xác thực",
+    "required": "Trường này là bắt buộc",
+    "invalid": "Dữ liệu không hợp lệ",
+    "tooShort": "Dữ liệu quá ngắn",
+    "tooLong": "Dữ liệu quá dài",
+    "invalidEmail": "Định dạng email không hợp lệ",
+    "invalidPhone": "Số điện thoại không hợp lệ",
+    "passwordMismatch": "Mật khẩu không khớp",
+    "weakPassword": "Mật khẩu quá yếu"
+  },
+  "success": {
+    "saved": "Lưu thành công",
+    "updated": "Cập nhật thành công",
+    "deleted": "Xóa thành công",
+    "created": "Tạo thành công",
+    "uploaded": "Tải lên thành công",
+    "sent": "Gửi thành công",
+    "imported": "Nhập thành công",
+    "exported": "Xuất thành công"
+  },
+  "confirm": {
+    "delete": "Bạn có chắc chắn muốn xóa mục này?",
+    "deleteMultiple": "Bạn có chắc chắn muốn xóa các mục này?",
+    "unsavedChanges": "Bạn có thay đổi chưa lưu. Bạn có chắc chắn muốn rời khỏi?",
+    "logout": "Bạn có chắc chắn muốn đăng xuất?"
+  },
+  "validation": {
+    "required": "{{field}} là bắt buộc",
+    "min": "{{field}} phải có ít nhất {{min}} ký tự",
+    "max": "{{field}} không được vượt quá {{max}} ký tự",
+    "email": "Vui lòng nhập địa chỉ email hợp lệ",
+    "phone": "Vui lòng nhập số điện thoại hợp lệ",
+    "url": "Vui lòng nhập URL hợp lệ",
+    "number": "Vui lòng nhập số hợp lệ",
+    "integer": "Vui lòng nhập số nguyên hợp lệ",
+    "positive": "Vui lòng nhập số dương",
+    "range": "{{field}} phải nằm trong khoảng {{min}} và {{max}}"
+  }
+}

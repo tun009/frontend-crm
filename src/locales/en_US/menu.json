@@ -1,0 +1,22 @@
+{
+  "dashboard": "Dashboard",
+  "resources": "Resources",
+  "licenseManagement": "License Management",
+  "products": "Products",
+  "business": "Business",
+  "orders": "Orders",
+  "revenue": "Revenue",
+  "customers": "Customers",
+  "marketing": "Marketing",
+  "affiliate": "Affiliate",
+  "emailMarketing": "Email Marketing",
+  "campaigns": "Campaigns",
+  "templates": "Templates",
+  "adminTools": "Admin Tools",
+  "users": "Users",
+  "categories": "Categories",
+  "permissions": "Permissions",
+  "settings": "Settings",
+  "tools": "Tools",
+  "apiDocs": "API Documentation"
+}
