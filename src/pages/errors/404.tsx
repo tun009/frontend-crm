@@ -18,7 +18,7 @@ const NotFound = () => {
         
         <div className="space-y-4">
           <Link to={ROUTES.DASHBOARD}>
-            <Button variant="primary" size="large" className="w-full">
+            <Button type="primary" size="large" className="w-full">
               Go to Dashboard
             </Button>
           </Link>

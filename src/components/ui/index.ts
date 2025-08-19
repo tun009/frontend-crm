@@ -1,15 +1,70 @@
-export { default as Button } from './Button';
-export { default as Input } from './Input';
-export { default as Card } from './Card';
-export { default as Loading } from './Loading';
-export { default as Modal } from './Modal';
-export { default as Badge } from './Badge';
-export { default as Avatar } from './Avatar';
+// Re-export customized components
+export { Button, Card, Input } from './CustomComponents';
 
-export type { ButtonProps } from './Button';
-export type { InputProps } from './Input';
-export type { CardProps } from './Card';
-export type { LoadingProps } from './Loading';
-export type { ModalProps } from './Modal';
-export type { BadgeProps } from './Badge';
-export type { AvatarProps } from './Avatar';
+// Re-export Ant Design components with consistent naming
+export {
+  Spin as Loading,
+  Modal,
+  Badge,
+  Avatar,
+  Table,
+  Form,
+  Select,
+  DatePicker,
+  Space,
+  Dropdown,
+  Divider,
+  Typography,
+  Row,
+  Col,
+  Layout,
+  Menu,
+  Breadcrumb,
+  Pagination,
+  Empty,
+  Result,
+  Alert,
+  message as Message,
+  notification as Notification,
+  Tooltip,
+  Popover,
+  Drawer,
+  Tabs,
+  Collapse,
+  Steps,
+  Progress,
+  Tag,
+  Switch,
+  Checkbox,
+  Radio,
+  Slider,
+  Rate,
+  Upload,
+  Tree,
+  Transfer,
+  Cascader,
+  AutoComplete,
+  TimePicker,
+  Calendar,
+  Affix,
+  Anchor,
+  BackTop,
+  ConfigProvider
+} from 'antd';
+
+// Re-export types
+export type {
+  ButtonProps,
+  InputProps,
+  CardProps,
+  SpinProps as LoadingProps,
+  ModalProps,
+  BadgeProps,
+  AvatarProps,
+  TableProps,
+  FormProps,
+  SelectProps,
+  DatePickerProps,
+  SpaceProps,
+  DropdownProps
+} from 'antd';

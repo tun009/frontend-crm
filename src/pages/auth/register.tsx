@@ -91,8 +91,8 @@ const Register = () => {
             />
 
             <Button
-              type="submit"
-              variant="primary"
+              type="primary"
+              htmlType="submit"
               size="large"
               loading={loading}
               className="w-full"

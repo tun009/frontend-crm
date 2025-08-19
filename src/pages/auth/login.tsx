@@ -90,8 +90,8 @@ const Login = () => {
             </div>
 
             <Button
-              type="submit"
-              variant="primary"
+              type="primary"
+              htmlType="submit"
               size="large"
               loading={loading}
               className="w-full"

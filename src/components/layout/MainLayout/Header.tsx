@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../../hooks/useTheme';
-import { Avatar, Badge } from '../../ui';
+import { useTheme } from '@/hooks/useTheme';
+import { Avatar, Badge, Dropdown, Space } from '@/components/ui';
 import {
   BellOutlined,
   GlobalOutlined,
@@ -13,7 +13,6 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined
 } from '@ant-design/icons';
-import { Dropdown, Space } from 'antd';
 
 interface HeaderProps {
   collapsed: boolean;
@@ -124,7 +123,7 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
 
         <Dropdown menu={{ items: userMenuItems }} placement="bottomRight">
           <div className="flex items-center space-x-2 cursor-pointer p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-            <Avatar size="small" name="John Doe" />
+            <Avatar size="small" icon={<UserOutlined />} />
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">John Doe</span>
           </div>
         </Dropdown>

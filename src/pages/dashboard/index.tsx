@@ -29,9 +29,9 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return <Loading size="large" text="Loading dashboard..." />;
-  }
+  // if (loading) {
+  //   return <Loading size="large" text="Loading dashboard..." />;
+  // }
 
   return (
     <div className="p-6 space-y-6">

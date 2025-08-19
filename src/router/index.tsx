@@ -9,6 +9,7 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={<Loading size="large" text="Loading..." overlay />}>
+      {/* <Suspense> */}
         <Routes>
           {routes.map((route) => {
             const { path, component: Component, requireAuth, roles, exact } = route;

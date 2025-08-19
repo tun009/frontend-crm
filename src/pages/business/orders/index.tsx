@@ -26,17 +26,17 @@ const Orders = () => {
   const getStatusColor = (status: Order['status']) => {
     const colors = {
       pending: 'warning',
-      processing: 'info',
-      shipped: 'info',
+      processing: 'processing',
+      shipped: 'processing',
       delivered: 'success',
-      cancelled: 'danger'
+      cancelled: 'error'
     } as const;
     return colors[status] || 'default';
   };
 
-  if (loading) {
-    return <Loading size="large" text="Loading orders..." />;
-  }
+  // if (loading) {
+  //   return <Loading size="large" text="Loading orders..." />;
+  // }
 
   return (
     <div className="p-6 space-y-6">
@@ -44,7 +44,7 @@ const Orders = () => {
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
           {t('menu.orders')}
         </h1>
-        <Button variant="primary">
+        <Button type="primary">
           {t('common.add')} Order
         </Button>
       </div>
@@ -98,9 +98,7 @@ const Orders = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <Badge variant={getStatusColor(order.status)}>
-                      {order.status}
-                    </Badge>
+                    <Badge status={getStatusColor(order.status)} text={order.status} />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
                     ${order.total.toFixed(2)}
@@ -109,7 +107,7 @@ const Orders = () => {
                     {new Date(order.createdAt).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <Button variant="ghost" size="small">
+                    <Button type="link" size="small">
                       {t('common.view')}
                     </Button>
                   </td>
