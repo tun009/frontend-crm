@@ -80,7 +80,7 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
       <div className="flex items-center space-x-4">
         <button
           onClick={onToggleCollapse}
-          className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
         >
           {collapsed ? (
             <MenuUnfoldOutlined className="text-gray-600 dark:text-gray-300" />
@@ -96,14 +96,14 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
 
       <div className="flex items-center space-x-4">
         <Dropdown menu={{ items: languageItems }} placement="bottomRight">
-          <button className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <button className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <GlobalOutlined className="text-gray-600 dark:text-gray-300" />
           </button>
         </Dropdown>
 
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
         >
           {isDark ? (
             <SunOutlined className="text-gray-600 dark:text-gray-300" />
@@ -113,13 +113,13 @@ const Header = ({ collapsed, onToggleCollapse }: HeaderProps) => {
         </button>
 
         <Badge count={notificationCount}>
-          <button className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <button className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <BellOutlined className="text-gray-600 dark:text-gray-300" />
           </button>
         </Badge>
 
         <Dropdown menu={{ items: userMenuItems }} placement="bottomRight">
-          <div className="flex items-center space-x-2 cursor-pointer p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <div className="flex items-center space-x-2 cursor-pointer p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <Avatar size="small" icon={<UserOutlined />} />
             <span className="font-medium text-gray-700 dark:text-gray-300">John Doe</span>
           </div>

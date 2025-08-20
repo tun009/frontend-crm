@@ -34,7 +34,7 @@ export const Input = ({ className, ...props }: InputProps & { className?: string
   return (
     <AntInput
       className={clsx(
-        'border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400',
+        'border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400',
         className
       )}
       {...props}

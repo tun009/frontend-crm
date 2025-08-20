@@ -7,7 +7,11 @@ const antdConfig = {
     cssVar: true,
     token: {
       fontFamily: 'Inter, AlibabaSans, system-ui, -apple-system, sans-serif',
-      colorPrimary: '#3b82f6',
+      colorPrimary: '#202D3F',
+      colorInfo: '#1E293B',
+      colorLink: '#334155',
+      colorLinkHover: '#475569',
+      colorLinkActive: '#1E293B',
       borderRadius: 6,
     },
   },

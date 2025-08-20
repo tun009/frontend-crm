@@ -56,8 +56,8 @@ const Dashboard = () => {
                 +{stats?.growthRate.users}% from last month
               </p>
             </div>
-            <div className="h-12 w-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <span className="text-blue-600 dark:text-blue-400 text-xl">👥</span>
+            <div className="h-12 w-12 bg-gray-200 dark:bg-gray-900 rounded-lg flex items-center justify-center">
+              <span className="text-gray-600 dark:text-gray-400 text-xl">👥</span>
             </div>
           </div>
         </Card>

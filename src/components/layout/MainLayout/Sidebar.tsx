@@ -242,8 +242,8 @@ const Sidebar = ({ collapsed }: SidebarProps) => {
           onClick={() => handleMenuClick(item)}
           className={`w-full flex items-center ${paddingClass} py-2 text-left rounded-md transition-colors mb-1 ${
             active
-              ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
-              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+              ? 'bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-300'
+              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
           }`}
         >
           <div className="flex items-center space-x-3">
@@ -271,8 +271,8 @@ const Sidebar = ({ collapsed }: SidebarProps) => {
         onClick={() => handleMenuClick(item)}
         className={`w-full flex items-center justify-center p-3 rounded-md transition-colors mb-1 ${
           active
-            ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
-            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+            ? 'bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-300'
+            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
         }`}
         title={item.label}
       >
@@ -287,7 +287,7 @@ const Sidebar = ({ collapsed }: SidebarProps) => {
     } h-screen flex flex-col`}>
       <div className="p-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+          <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">
             <span className="text-white font-bold text-sm">C</span>
           </div>
           {!collapsed && (

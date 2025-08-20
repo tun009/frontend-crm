@@ -4,7 +4,7 @@ import { ROUTES } from '@/utils/constants';
 
 const Forbidden = () => {
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-200 dark:bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full text-center">
         <div className="mb-8">
           <h1 className="text-9xl font-bold text-gray-300 dark:text-gray-600">403</h1>
@@ -25,7 +25,7 @@ const Forbidden = () => {
           
           <button 
             onClick={() => window.history.back()}
-            className="w-full text-blue-600 hover:text-blue-500 font-medium"
+            className="w-full text-gray-600 hover:text-gray-500 font-medium"
           >
             Go Back
           </button>
